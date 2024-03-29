@@ -10,6 +10,33 @@
 
 <body>
 <div>This is the print settings page</div>
+<div id = "file">File Display Here</div>
+<div> Print Settings: <br>
+Destination: 
+<select name = "printers" id="printers">
+<option value="printer1">BC_Printer_1</option>
+<option value="printer2">BC_Printer_2</option>
+<option value="printer3">BC_Printer_3</option>
+</select><br>
+Pages: 
+<select name = "pages" id="pages">
+<option value="all">All</option>
+<option value="even">Even Pages Only</option>
+<option value="odd">Odd Pages Only</option>
+</select><br>
+Copies: 
+<input type = "number" id = "copyNum" name = "copies" value = "1"><br>
+Layout: 
+<select name = "layout" id="layout">
+<option value="portrait">Portrait</option>
+<option value="landscape">Landscape</option>
+</select><br>
+Color: 
+<select name = "color" id="color">
+<option value="color">Color</option>
+<option value="baw">Black and White</option>
+</select><br>
+</div>
 <button type = "button" onclick = "finalPage()">Print Files</button>
 <button type = "button" onclick = "logOut()">Log Out</button>
 
