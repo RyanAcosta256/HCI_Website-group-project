@@ -13,6 +13,10 @@
 <div>Brooklyn College Printing Service</div>
 <div id = "balance">Current Balance: $15</div>
 <button type = "button" onclick = "addBalance()">Add Money</button>
+<button type = "button" onclick = "addFiles()">Select Files</button>
+<div id = "drop_zone" ondrop = "dropHandler(event);" ondragover="dragOverHandler(event);">
+<p>Drag one or more files to this <i>drop zone</i>.</p>
+</div>
 <button type = "button" onclick = "goToPrintSettings()">Submit Files</button>
 <button type = "button" onclick = "logOut()">Log Out</button>
 
@@ -24,6 +28,40 @@ function logOut()
 function goToPrintSettings()
 {
 	window.location.href = "./printsettings.html";
+}
+function addBalance()
+{
+}
+function addFiles()
+{
+}
+function dropHandler(ev) {
+  console.log("File(s) dropped");
+
+  // Prevent default behavior (Prevent file from being opened)
+  ev.preventDefault();
+
+  if (ev.dataTransfer.items) {
+    // Use DataTransferItemList interface to access the file(s)
+    [...ev.dataTransfer.items].forEach((item, i) => {
+      // If dropped items aren't files, reject them
+      if (item.kind === "file") {
+        const file = item.getAsFile();
+        console.log(`… file[${i}].name = ${file.name}`);
+      }
+    });
+  } else {
+    // Use DataTransfer interface to access the file(s)
+    [...ev.dataTransfer.files].forEach((file, i) => {
+      console.log(`… file[${i}].name = ${file.name}`);
+    });
+  }
+}
+function dragOverHandler(ev) {
+  console.log("File(s) in drop zone");
+
+  // Prevent default behavior (Prevent file from being opened)
+  ev.preventDefault();
 }
 </script>
 </body>
