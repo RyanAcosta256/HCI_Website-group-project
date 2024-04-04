@@ -14,7 +14,20 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 500px;
 }
-
+.passworderror {
+    display: none;
+    color: #ff0000;
+}
+.passworderror.error {
+    display: block;
+}
+.usernameerror {
+    display: none;
+    color: #ff0000;
+}
+.usernameerror.error {
+    display: block;
+}
 h1 {
     margin-bottom: 30px;
 }
@@ -26,7 +39,9 @@ h1 {
     border-radius: 4px;
     overflow: hidden;
 }
-
+.login-form .input-group.error {
+    border-color: #ff0000;
+}
 .login-form input {
     width: 100%;
     padding: 15px;
@@ -41,12 +56,11 @@ h1 {
     color: #817979;
 
 }
-
 .login-button {
     width: 100%;
     padding: 15px;
     margin-top: 20px;
-    background-color: #4CAF50;
+    background-color: #4BD051;
     color: white;
     border-radius: 4px;
     cursor: pointer;
@@ -54,10 +68,22 @@ h1 {
     border: 1px ;
     transition: background-color 0.3s ease;
 }
-
+.login-button:hover {
+  background-color: #37993C;
+  transition: background-color 0.075s ease;
+}
 .password-instructions {
     font-size: 14px;
     color: #666;
     margin-top: 30px;
     line-height: 1.4;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
