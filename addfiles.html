@@ -3,22 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="addFiles.css">
+</head>
 <style>
 
 </style>
 </head>
 
 <body>
+  <div id = "container"><!--flex box starter-->
+    <div id = "p1">
+      <div id = "title">Brooklyn College Printing Service</div>
+      <div id = "tmp"><!--this is to hold the button and balance together-->
+        <div id = "balance">Current Balance: $15</div><button id = "balance" type = "button" onclick = "addBalance()">Add Money</button>
+      </div>
+
+    </div>
+    <div id = "p2">
+        <button id ="select_files"   type = "button" onclick = "addFiles()">Select Files</button>
+        <div id = "drop_zone" ondrop = "dropHandler(event);" ondragover="dragOverHandler(event);">
+          <p>Drag one or more files to this <i>drop zone</i>.</p>
+        </div>
+    </div>
+
+    <div id = "p3">
+      <button id = "log_out" type = "button" onclick = "logOut()">Log Out</button>  <button id ="submit" type = "button" onclick = "goToPrintSettings()">Submit Files</button>
+      
+    </div>
+    
+  </div>
 <div>This is the add files page</div>
-<div>Brooklyn College Printing Service</div>
-<div id = "balance">Current Balance: $15</div>
-<button type = "button" onclick = "addBalance()">Add Money</button>
-<button type = "button" onclick = "addFiles()">Select Files</button>
-<div id = "drop_zone" ondrop = "dropHandler(event);" ondragover="dragOverHandler(event);">
-<p>Drag one or more files to this <i>drop zone</i>.</p>
-</div>
-<button type = "button" onclick = "goToPrintSettings()">Submit Files</button>
-<button type = "button" onclick = "logOut()">Log Out</button>
+
+
+
+
+
 
 <script>
 function logOut()
