@@ -3,43 +3,100 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brooklyn College Printing Service</title>
 <style>
-
+body
+{
+	background-color: #f5f5f5;
+	padding: 0;
+}
+.title
+{
+	left: 0px;
+}
+.display
+{
+	display: flex;
+}
+.documentdisplay
+{
+	background-color: #f0f0f0;
+	margin-left: 10px;
+}
+.document
+{
+	frameBorder: 0;
+	scrolling: auto;
+	height: 850px;
+	width: 1000px;
+}
+.printsettings
+{
+	background-color: #f0f0f0;
+	padding: 10px;
+	margin-left: 350px;
+	display: flex;
+	flex-flow: column wrap;
+}
+.logout
+{
+	position: absolute;
+	right: 10px;
+	top: 15px;
+}
 </style>
 </head>
 
 <body>
-<div>This is the print settings page</div>
-<div>Brooklyn College Printing Service</div>
-<div id = "file">File Display Here</div>
-<div> Print Settings: <br>
+<h1 class = "title">Brooklyn College Printing Service</h1>
+<div class = "logout">
+<button type = "button" onclick = "logOut()">Log Out</button>
+</div>
+<div class = "display">
+<div class = "documentdisplay">
+<embed src = "" 
+class = "document" id = "document"></embed>
+</div>
+<div class = "printsettings"> Print Settings: <br>
+<div>
 Destination: 
 <select name = "printers" id="printers">
 <option value="printer1">BC_Printer_1</option>
 <option value="printer2">BC_Printer_2</option>
 <option value="printer3">BC_Printer_3</option>
 </select><br>
+</div>
+<div>
 Pages: 
 <select name = "pages" id="pages">
 <option value="all">All</option>
 <option value="even">Even Pages Only</option>
 <option value="odd">Odd Pages Only</option>
 </select><br>
+</div>
+<div>
 Copies: 
 <input type = "number" id = "copyNum" name = "copies" value = "1"><br>
+</div>
+<div>
 Layout: 
 <select name = "layout" id="layout">
 <option value="portrait">Portrait</option>
 <option value="landscape">Landscape</option>
 </select><br>
+</div>
+<div>
 Color: 
 <select name = "color" id="color">
 <option value="color">Color</option>
 <option value="baw">Black and White</option>
 </select><br>
 </div>
+<div>
 <button type = "button" onclick = "finalPage()">Print Files</button>
-<button type = "button" onclick = "logOut()">Log Out</button>
+</div>
+</div>
+</div>
 
 <script>
 function logOut()
