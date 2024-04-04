@@ -1,6 +1,8 @@
 function logIn()
 {
-	window.location.href = "./addfiles.html";
+	if (validateForm()) {
+		window.location.href = "./addfiles.html";
+	}
 }
 function validateUsername() {
 				var username = document.getElementById("username").value;
@@ -32,8 +34,11 @@ function validatePassword() {
 function validateForm() {
     var isUsernameValid = validateUsername();
     var isPasswordValid = validatePassword();
-
-    return isUsernameValid && isPasswordValid;
+		if (isUsernameValid && isPasswordValid) {
+			  return true;
+    } else {
+        return false;
+    }
 }
 function isNumber(i) {
     return (i >= '0' && i <= '9');
@@ -47,3 +52,4 @@ loginButton.addEventListener('click', function(e) {
     validateUsername();
 		validatePassword();
 });
+
