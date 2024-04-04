@@ -6,6 +6,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: arial;
+    font-size: 15px;
 }
 
 .login-container {
