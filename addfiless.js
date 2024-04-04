@@ -21,17 +21,27 @@ function addBalance(){
             }
 }
 function addFiles(){ 
-                 const fileInput = document.getElementById('fileInput');
-                fileInput.click(); // Trigger file input click event to open file selection dialog
-}
+	const fileInput = document.getElementById('fileInput');
+	fileInput.click(); // Trigger file input click event to open file selection dialog
+	}
 
-// Event listener for file input change
-document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+	// Event listener for file input change
+	document.getElementById('fileInput').addEventListener('change', handleFileSelect);
 
 function handleFileSelect(event) {
-    const files = event.target.files;
-    console.log('Selected files:', files);
-    // Add your file handling logic here
+	const files = event.target.files;
+	console.log('Selected files:', files);
+   
+	// Addfile handling logic here
+	// Display the names of the selected files
+	const fileList = document.getElementById('fileList');
+	fileList.innerHTML = ''; // Clear previous file list
+	for (let i = 0; i < files.length; i++) {
+        	const fileName = files[i].name;
+        	const listItem = document.createElement('li');
+       		listItem.textContent = fileName;
+		fileList.appendChild(listItem);
+		}
 }
 function dropHandler(ev) {
   console.log("File(s) dropped");
