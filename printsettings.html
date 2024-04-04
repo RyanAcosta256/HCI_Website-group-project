@@ -3,48 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Brooklyn College Printing Service</title>
-<style>
-body
-{
-	background-color: #f5f5f5;
-	padding: 0;
-}
-.title
-{
-	left: 0px;
-}
-.display
-{
-	display: flex;
-}
-.documentdisplay
-{
-	background-color: #f0f0f0;
-	margin-left: 10px;
-}
-.document
-{
-	frameBorder: 0;
-	scrolling: auto;
-	height: 850px;
-	width: 1000px;
-}
-.printsettings
-{
-	background-color: #f0f0f0;
-	padding: 10px;
-	margin-left: 350px;
-	display: flex;
-	flex-flow: column wrap;
-}
-.logout
-{
-	position: absolute;
-	right: 10px;
-	top: 15px;
-}
-</style>
+	<title>Brooklyn College Printing Service</title>
+	<link rel="stylesheet" href="PrintStyles.css">
+	<script src="PrintCode.js"></script>
 </head>
 
 <body>
@@ -54,12 +15,12 @@ body
 </div>
 <div class = "display">
 <div class = "documentdisplay">
-<embed src = "" 
+<embed src = ""
 class = "document" id = "document"></embed>
 </div>
 <div class = "printsettings"> Print Settings: <br>
 <div>
-Destination: 
+Destination:
 <select name = "printers" id="printers">
 <option value="printer1">BC_Printer_1</option>
 <option value="printer2">BC_Printer_2</option>
@@ -67,7 +28,7 @@ Destination:
 </select><br>
 </div>
 <div>
-Pages: 
+Pages:
 <select name = "pages" id="pages">
 <option value="all">All</option>
 <option value="even">Even Pages Only</option>
@@ -75,18 +36,18 @@ Pages:
 </select><br>
 </div>
 <div>
-Copies: 
+Copies:
 <input type = "number" id = "copyNum" name = "copies" value = "1"><br>
 </div>
-<div>
-Layout: 
-<select name = "layout" id="layout">
-<option value="portrait">Portrait</option>
-<option value="landscape">Landscape</option>
-</select><br>
+	<div>
+		Layout:
+		<select name = "layout" id="layout">
+			<option value="portrait">Portrait</option>
+			<option value="landscape">Landscape</option>
+		</select><br>
 </div>
 <div>
-Color: 
+Color:
 <select name = "color" id="color">
 <option value="color">Color</option>
 <option value="baw">Black and White</option>
@@ -97,16 +58,5 @@ Color:
 </div>
 </div>
 </div>
-
-<script>
-function logOut()
-{
-	window.location.href = "./index.html";
-}
-function finalPage()
-{
-	window.location.href = "./final.html";
-}
-</script>
 </body>
 </html>
