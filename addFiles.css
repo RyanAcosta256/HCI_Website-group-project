@@ -1,0 +1,106 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    
+    height: 100vh;
+    
+    
+}
+
+
+/*flexbox first part
+avg 77
+below 65 --> might be fucked
+above a 77 --> head is above water
+-0 is full credit
+task analysis is a free point?
+*/ 
+#p1{
+    display: flex;  
+    justify-content: space-around;
+   
+    flex-grow: 0;
+}
+
+#title{
+    align-self: flex-start;
+    gap: 500px;
+    font-size:  50px;
+}
+
+#tmp{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    font-size:  50px;
+}
+
+#balance{
+   border: 5px;
+   font-size: 30px;
+   padding: 10px 24px;
+   border-radius: 10px;
+}
+
+
+
+
+/*flexbox second part*/
+#p2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    text-align: center;;
+    text-align: center;      
+    flex: 1;
+}
+
+#drop_zone{
+    flex-grow: 1;
+
+    border-radius: 20px ;
+    background-color: rgb(189, 184, 184);
+    opacity: 0.45;
+    height: 500px;
+    width: 700px;
+        
+}
+
+#select_files{
+   border: 5px;
+   font-size: 25px;
+   padding: 10px 24px;
+   border-radius: 10px;
+}
+
+/*flexbox third part*/
+#p3{
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    text-align: center;
+   
+}
+
+#log_out{
+    border: 5px;
+    font-size: 25px;
+    padding: 10px 24px;
+    border-radius: 10px;
+    text-align: center;
+    height: 50px;
+}
+
+#submit{
+    border: 5px;
+    font-size: 25px;
+    padding: 10px 24px;
+    border-radius: 10px;
+    text-align: center;
+    height: 50px;
+    background-color: #2BD55B;
+    color: white;
+}
