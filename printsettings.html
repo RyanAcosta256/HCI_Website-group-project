@@ -10,51 +10,63 @@
 
 <body>
 <h1 class = "title">Brooklyn College Printing Service</h1>
-<div class = "logout">
-<button type = "button" onclick = "logOut()">Log Out</button>
-</div>
+
 <div class = "display">
 <div class = "documentdisplay">
 <embed src = ""
 class = "document" id = "document"></embed>
 </div>
-<div class = "printsettings"> Print Settings: <br>
-<div>
-Destination:
-<select name = "printers" id="printers">
-<option value="printer1">BC_Printer_1</option>
-<option value="printer2">BC_Printer_2</option>
-<option value="printer3">BC_Printer_3</option>
-</select><br>
+<div class = "printsettings">
+<h2>Print Settings:</h2>
+<div class = "menuItem">
+	<div class = "label">Destination</div>
+	<div class = "dropdown">
+	<select name = "printers" id="printers" class = "dropdownItem">
+		<option value="printer1">BC_Printer_1</option>
+		<option value="printer2">BC_Printer_2</option>
+		<option value="printer3">BC_Printer_3</option>
+	</select>
+	</div>
 </div>
-<div>
-Pages:
-<select name = "pages" id="pages">
-<option value="all">All</option>
-<option value="even">Even Pages Only</option>
-<option value="odd">Odd Pages Only</option>
-</select><br>
+<div class = "menuItem">
+	<div class = "label">Pages</div>
+	<div class = "dropdown">
+	<select name = "pages" id="pages" class = "dropdownItem">
+		<option value="all">All</option>
+		<option value="even">Even Pages Only</option>
+		<option value="odd">Odd Pages Only</option>
+	</select>
 </div>
-<div>
-Copies:
-<input type = "number" id = "copyNum" name = "copies" value = "1"><br>
 </div>
-	<div>
-		Layout:
-		<select name = "layout" id="layout">
-			<option value="portrait">Portrait</option>
-			<option value="landscape">Landscape</option>
-		</select><br>
+<div class = "menuItem">
+	<div class = "label">Copies</div>
+	<div class = "dropdown">
+	<input type = "number" id = "copyNum" name = "copies" value = "1" class = "copier">
+	</div>
 </div>
-<div>
-Color:
-<select name = "color" id="color">
-<option value="color">Color</option>
-<option value="baw">Black and White</option>
-</select><br>
+<div class = "menuItem">
+	<div class = "label">Layout</div>
+	<div class = "dropdown">
+	<select name = "layout" id="layout" class = "dropdownItem">
+		<option value="portrait">Portrait</option>
+		<option value="landscape">Landscape</option>
+	</select>
+	</div>
 </div>
-<div>
-<button type = "button" onclick = "finalPage()">Print Files</button>
+<div class = "menuItem">
+	<div class = "label">Color</div>
+	<div class = "dropdown">
+	<select name = "color" id="color" class = "dropdownItem">
+		<option value="color">Color</option>
+		<option value="baw">Black and White</option>
+	</select><br>
+	</div>
+</div>
+<div class = "menuItem">
+	<button type = "button" class = "printbutton" onclick = "finalPage()">Print Files</button>
+</div>
+<div class = "logout menuItem">
+<button type = "button" onclick = "logOut()">Log Out</button>
 </div>
 </div>
 </div>
