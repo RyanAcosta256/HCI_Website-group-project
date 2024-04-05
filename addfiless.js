@@ -1,5 +1,6 @@
+let currentBalance = 15; // Initial balance amount
 
-function logOut()
+    function logOut()
 {
 	window.location.href = "./index.html";
 }
@@ -7,20 +8,22 @@ function goToPrintSettings()
 {
 	window.location.href = "./printsettings.html";
 }
-function addBalance(){
-             const balanceInput = document.getElementById('balanceInput');
-            const balanceAmount = parseFloat(balanceInput.value);
+function addBalance() {
+    const balanceInput = document.getElementById('balanceInput');
+    const balanceAmount = parseFloat(balanceInput.value);
 
-            if (!isNaN(balanceAmount) && balanceAmount > 0) {
-                console.log(`Adding balance: $${balanceAmount}`);
-                const currentBalance = document.getElementById('balance');
-                currentBalance.textContent = `Current Balance: $${balanceAmount}`;
-                balanceInput.value = '';
-            } else {
-                alert('Please enter a valid positive number for the balance.');
-            }
+    if (!isNaN(balanceAmount) && balanceAmount > 0) {
+        console.log(`Adding balance: $${balanceAmount}`);
+        currentBalance += balanceAmount; // Add the entered amount to the current balance
+        const balanceDisplay = document.getElementById('balance');
+        balanceDisplay.textContent = `Current Balance: $${currentBalance}`;
+        balanceInput.value = ''; // Clear input field after adding balance
+    } else {
+        const errorElement = document.getElementById('balanceError');
+        errorElement.textContent = 'Please enter a valid positive number for the balance.';
+    }
 }
-function addFiles(){ 
+function addFiles(){
 	const fileInput = document.getElementById('fileInput');
 	fileInput.click(); // Trigger file input click event to open file selection dialog
 	}
@@ -31,7 +34,7 @@ function addFiles(){
 function handleFileSelect(event) {
 	const files = event.target.files;
 	console.log('Selected files:', files);
-   
+
 	// Addfile handling logic here
 	// Display the names of the selected files
 	const fileList = document.getElementById('fileList');
