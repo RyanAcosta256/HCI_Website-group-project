@@ -1,76 +1,65 @@
-let currentBalance = 15; // Initial balance amount
-
-    function logOut()
+function logOut()
 {
 	window.location.href = "./index.html";
 }
 function goToPrintSettings()
 {
-	window.location.href = "./printsettings.html";
+  if (document.getElementById("submit").classList.contains("confirmed")) {
+    window.location.href = "./printsettings.html";
+  }
 }
-function addBalance() {
-    const balanceInput = document.getElementById('balanceInput');
-    const balanceAmount = parseFloat(balanceInput.value);
-
-    if (!isNaN(balanceAmount) && balanceAmount > 0) {
-        console.log(`Adding balance: $${balanceAmount}`);
-        currentBalance += balanceAmount; // Add the entered amount to the current balance
-        const balanceDisplay = document.getElementById('balance');
-        balanceDisplay.textContent = `Current Balance: $${currentBalance}`;
-        balanceInput.value = ''; // Clear input field after adding balance
-    } else {
-        const errorElement = document.getElementById('balanceError');
-        errorElement.textContent = 'Please enter a valid positive number for the balance.';
+function addBalance(value) {
+    var currentValue = document.getElementById('dollarvalue').textContent;
+    var currentBalance = parseFloat(currentValue.substring(1));
+    var enteredValue = parseFloat(value);
+    if (!isNaN(enteredValue) && enteredValue > 0) {
+        var newBalance = currentBalance + enteredValue;
+        var newBalanceString = '$' + newBalance.toFixed(2);
+        document.getElementById('dollarvalue').textContent = newBalanceString;
+        document.getElementById('balanceInput').value = '';
     }
 }
-function addFiles(){
-	const fileInput = document.getElementById('fileInput');
-	fileInput.click(); // Trigger file input click event to open file selection dialog
-	}
+document.getElementById("moneyForm").addEventListener('submit', function(event) {
+    event.preventDefault();
+    addBalance(document.getElementById("balanceInput").value);
+  });
+  function addFiles() {
+    const fileInput = document.getElementById("fileInput");
+    fileInput.click();
+    const dropSquare = document.getElementById("drop_zone");
+    dropSquare.classList.add("confirmed");
+    document.getElementById("filetext").classList.add("confirmed");
+    document.getElementById("guideText").classList.add("confirmed");
+    document.getElementById("submit").classList.add("confirmed");
+    document.getElementById("totalcost").textContent = "Total Cost: $1.50";
 
-	// Event listener for file input change
-	document.getElementById('fileInput').addEventListener('change', handleFileSelect);
-
-function handleFileSelect(event) {
-	const files = event.target.files;
-	console.log('Selected files:', files);
-
-	// Addfile handling logic here
-	// Display the names of the selected files
-	const fileList = document.getElementById('fileList');
-	fileList.innerHTML = ''; // Clear previous file list
-	for (let i = 0; i < files.length; i++) {
-        	const fileName = files[i].name;
-        	const listItem = document.createElement('li');
-       		listItem.textContent = fileName;
-		fileList.appendChild(listItem);
-		}
+  }
+function deleteFile() {
+  const dropSquare = document.getElementById("drop_zone");
+  dropSquare.classList.remove("confirmed");
+  document.getElementById("filetext").classList.remove("confirmed");
+  document.getElementById("guideText").classList.remove("confirmed");
+  document.getElementById("submit").classList.remove("confirmed");
+  document.getElementById("totalcost").textContent = ("Total Cost: $0.00");
 }
 function dropHandler(ev) {
-  console.log("File(s) dropped");
-
-  // Prevent default behavior (Prevent file from being opened)
-  ev.preventDefault();
-
-  if (ev.dataTransfer.items) {
-    // Use DataTransferItemList interface to access the file(s)
-    [...ev.dataTransfer.items].forEach((item, i) => {
-      // If dropped items aren't files, reject them
-      if (item.kind === "file") {
-        const file = item.getAsFile();
+  if (!document.getElementById("submit").classList.contains("confirmed")) {
+    ev.preventDefault();
+    addFiles();
+    if (ev.dataTransfer.items) {
+      [...ev.dataTransfer.items].forEach((item, i) => {
+        if (item.kind === "file") {
+          const file = item.getAsFile();
+          console.log(`… file[${i}].name = ${file.name}`);
+        }
+      });
+    } else {
+      [...ev.dataTransfer.files].forEach((file, i) => {
         console.log(`… file[${i}].name = ${file.name}`);
-      }
-    });
-  } else {
-    // Use DataTransfer interface to access the file(s)
-    [...ev.dataTransfer.files].forEach((file, i) => {
-      console.log(`… file[${i}].name = ${file.name}`);
-    });
+      });
+    }
   }
 }
 function dragOverHandler(ev) {
-  console.log("File(s) in drop zone");
-
-  // Prevent default behavior (Prevent file from being opened)
   ev.preventDefault();
 }
