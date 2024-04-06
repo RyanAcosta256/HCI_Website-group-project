@@ -62,13 +62,13 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 10px; /* Decrease the margin */
+  margin-bottom: 10px; 
 }
 
 .browseText {
   color: #1884FF;
   cursor: pointer;
-  margin-top: -10px; /* Adjust the margin to move the text upward */
+  margin-top: -10px; 
 }
 
 .selects{
@@ -119,7 +119,7 @@ body {
   color: red;
   cursor: pointer;
   font-size: 20px;
-  margin-right: 13px; /* Adjust margin to move the delete icon to the left */
+  margin-right: 13px;
 }
 
 .fileInfoGroup {
