@@ -20,18 +20,28 @@ body
 {
 	background-color: #f0f0f0;
 	width: 70%;
+	height: 89.4vh;
 }
-.document
-{
-	border: 0;
-	overflow: auto;
-	height: 100%;
-	width: 100%;
+.document {
+		background-color: #ffffff;
+    width: 425px; /* 8.5 inches * 100 pixels per inch */
+    height: 550px; /* 11 inches * 100 pixels per inch */
+    border: 1px solid #d4d4d4; /* Add a border for visualization */
+    box-sizing: border-box; /* Include border in width and height calculation */
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		margin-left: 270px;
+		margin-top: 50px;
+}
+.document.change {
+	width: 550px;
+	height: 425px;
+	margin-left: 200px;
 }
 .printsettings
 {
 	background-color: #ffffff;
-	padding: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
 	display: flex;
 	flex-flow: column nowrap;
 }
@@ -42,7 +52,11 @@ body
     align-items: center;
 		justify-content: center;
 }
-
+.dropdownItem:hover
+{
+	background-color: #e7e7e7;
+	transition: background-color 0.075s ease;
+}
 .label
 {
     flex: 1;
@@ -69,7 +83,8 @@ body
 		width: 50px;
 		height: 40px;
 		border: 1px solid #d4d4d4;
-
+		border-radius: 8px;
+		text-indent: 5px;
 }
 .printbutton
 {
@@ -80,12 +95,77 @@ body
 	color: white;
 	border-radius: 4px;
 	cursor: pointer;
-	font-size: 18px;
+	font-size: 20px;
 	border: none;
 	transition: background-color 0.3s ease;
 }
+.printbutton:hover {
+	 background-color: #37993C;
+	 transition: background-color 0.075s ease;
+}
+.submits {
+    padding-top: 10px; /* Add padding for spacing */
+    display: flex;
+    justify-content: space-between;
+		margin-top: 100px; /* Evenly space the buttons */
+}
+.placeholdertext {
+	margin-left:20px;
+	margin-right: 20px;
+}
+.placeholderimage {
+	height:200px;
+	width:350px;
+	margin-left:35px;
+	align-content: center;
+}
+.placeholderimage.change {
+	margin-left: 100px;
+}
+.addmore {
+	margin-bottom: 20px;
+	background: #e7e7e7;
+	border: 1px solid #d4d4d4;
+	border-radius: 4px;
+	overflow: hidden;
+}
 .logout
 {
-	right: 10px;
-	top: 15px;
+	font-size: 20px;
+	background-color: #ffffff;
+   border: 1px solid #d4d4d4;
+   font-size: 18px;
+   border-radius: 8px;
+   width: 200px;
+   height: 50px;
+   margin-bottom: 15px;
+   cursor: pointer;
+}
+.logout:hover {
+	border: 0px;
+	transition: border 0s ease;
+	background-color: #FF3333;
+	transition: background-color 0.075s ease;
+	color: #ffffff;
+	transition: color 0s ease;
+}
+.addMore
+{
+	font-size: 20px;
+	background-color: #ffffff;
+   border: 1px solid #d4d4d4;
+   font-size: 18px;
+   border-radius: 8px;
+   width: 200px;
+   height: 50px;
+   margin-bottom: 15px;
+   cursor: pointer;
+}
+.addMore:hover {
+	border: 0px;
+	transition: border 0s ease;
+	background-color: #1D88F2;
+	transition: background-color 0.075s ease;
+	color: #ffffff;
+	transition: color 0s ease;
 }
