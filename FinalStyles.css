@@ -1,60 +1,59 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f5f5;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-div {
+.content {
+    background: #fff;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
     text-align: center;
 }
 
-.header {
-    margin-top: 300px;
-    font-size: 24px;
-}
-
-
-.content {
-    margin-top: 150px;
-    margin-left: 960px;
-    background: #fff;
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 500px;
+.button1,
+.button2 {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #4BD051;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  border: 1px ;
+  transition: background-color 0.3s ease;
 }
 
 .button1 {
-    width: 80%;
-    margin: 10px auto;
-    padding: 15px;
-    font-size: 16px;
-    color: white;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  background-color: #4BD051;
+  color: white;
+}
+.button1:hover {
+  background-color: #37993C;
+  transition: background-color 0.075s ease;
 }
 
 .button2 {
-    width: 80%;
-    margin: 10px auto;
-    padding: 15px;
-    font-size: 16px;
     color: white;
-    background-color: #f11a1a;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    background-color: #FF3333;
+}
+.button2:hover {
+  background-color: #C41010;
+  transition: background-color 0.075s ease;
 }
 
 .message {
     margin-bottom: 20px;
-    font-size: 18px;
+    align-self: center;
 }
 
 .balance {
     font-size: 20px;
     margin-bottom: 40px;
 }
-
