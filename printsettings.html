@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -13,8 +13,10 @@
 
 <div class = "display">
 <div class = "documentdisplay">
-<embed src = ""
-class = "document" id = "document"></embed>
+<div class = "document" id = "document">
+	<p class = "placeholdertext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mattis erat turpis. Proin pulvinar quam ut turpis consequat, at vestibulum mi gravida. Etiam gravida lectus nec tortor tristique tristique. Cras ut lorem consectetur, ullamcorper est sit amet, placerat justo. Cras dignissim orci nisi, non molestie erat cursus sed. Pellentesque porta mi id pellentesque fermentum. Vestibulum lacinia tincidunt felis vel blandit. Praesent laoreet euismod ex, nec bibendum leo convallis ac. Vestibulum vel tempus justo. Etiam semper venenatis tellus, ac commodo justo lacinia vel. Vestibulum sit amet rhoncus urna. Vivamus in rutrum arcu, id hendrerit mauris.</p>
+	<img src ="landscapecolor.jpeg" class = "placeholderimage" id = "placeholderimg">
+</div>
 </div>
 <div class = "printsettings">
 <h2>Print Settings:</h2>
@@ -41,13 +43,13 @@ class = "document" id = "document"></embed>
 <div class = "menuItem">
 	<div class = "label">Copies</div>
 	<div class = "dropdown">
-	<input type = "number" id = "copyNum" name = "copies" value = "1" class = "copier">
+	<input type = "number" id = "copyNum" name = "copies" value = "1" class = "copier dropdownItem">
 	</div>
 </div>
 <div class = "menuItem">
 	<div class = "label">Layout</div>
 	<div class = "dropdown">
-	<select name = "layout" id="layout" class = "dropdownItem">
+	<select name = "layout" id="layout" class = "dropdownItem" onchange = changeLayout()>
 		<option value="portrait">Portrait</option>
 		<option value="landscape">Landscape</option>
 	</select>
@@ -56,7 +58,7 @@ class = "document" id = "document"></embed>
 <div class = "menuItem">
 	<div class = "label">Color</div>
 	<div class = "dropdown">
-	<select name = "color" id="color" class = "dropdownItem">
+	<select name = "color" id="color" class = "dropdownItem" onchange = "changeImage()">
 		<option value="color">Color</option>
 		<option value="baw">Black and White</option>
 	</select><br>
@@ -65,8 +67,9 @@ class = "document" id = "document"></embed>
 <div class = "menuItem">
 	<button type = "button" class = "printbutton" onclick = "finalPage()">Print Files</button>
 </div>
-<div class = "logout menuItem">
-<button type = "button" onclick = "logOut()">Log Out</button>
+<div class = "submits menuItem">
+	<button class = "addmore" type = "button" onclick = "addMore()">Add More Files</button>
+	<button class = "logout" type = "button" onclick = "logOut()">Log Out</button>
 </div>
 </div>
 </div>
