@@ -23,14 +23,14 @@ body
 	height: 89.4vh;
 }
 .document {
-		background-color: #ffffff;
-    width: 425px; /* 8.5 inches * 100 pixels per inch */
-    height: 550px; /* 11 inches * 100 pixels per inch */
-    border: 1px solid #d4d4d4; /* Add a border for visualization */
-    box-sizing: border-box; /* Include border in width and height calculation */
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		margin-left: 270px;
-		margin-top: 50px;
+	background-color: #ffffff;
+    width: 425px; 
+    height: 550px; 
+    border: 1px solid #d4d4d4;
+    box-sizing: border-box;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	margin-left: 270px;
+	margin-top: 50px;
 }
 .document.change {
 	width: 550px;
@@ -104,10 +104,10 @@ body
 	 transition: background-color 0.075s ease;
 }
 .submits {
-    padding-top: 10px; /* Add padding for spacing */
+    padding-top: 10px; 
     display: flex;
     justify-content: space-between;
-		margin-top: 100px; /* Evenly space the buttons */
+		margin-top: 100px; 
 }
 .placeholdertext {
 	margin-left:20px;
