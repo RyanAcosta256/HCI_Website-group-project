@@ -174,8 +174,12 @@ body {
    margin-left: 160px;
 }
 #log_out:hover {
-  background-color: #e7e7e7;
-  transition: background-color 0.1s ease;
+  border: 0px;
+  transition: border 0s ease;
+  background-color: #FF3333;
+  transition: background-color 0.075s ease;
+  color: #ffffff;
+  transition: color 0s ease;
 }
 #submit{
   background-color: #77EA7D;
@@ -204,3 +208,4 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance:textfield;
 }
+
