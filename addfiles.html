@@ -3,31 +3,59 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="addfiless.js"></script>
-<link rel="stylesheet" href="addFiles.css">
+	<title>Brooklyn College Printing Service</title>
+
+	<link rel="stylesheet" href="addFiles.css">
 </head>
 
 <body>
-  <div id = "container"><!--flex box starter-->
-	  
-    <div id = "p1">
-      <div id = "title">Brooklyn College Printing Service</div>
-      <div id = "tmp"><!--this is to hold the button and balance together-->
-        <div id = "balance">Current Balance: $15</div><button id = "balance" type = "button" onclick = "addBalance()">Add Money</button>
-      </div>
+  <div class = "container"><!--flex box starter-->
+
+    <div class = "p1">
+      <h1 class = "title">Brooklyn College Printing Service</h1>
+      <div class = "moneygroup"><!--this is to hold the button and balance together-->
+        <div class = "spacing">Current Balance:</div><h4 id = dollarvalue class = "spacing">$15.00</h4>
+				<form id= "moneyForm" class="moneyForm" onsubmit="return addBalance(this.balanceInput.value)" method="GET">
+					<input id = balanceInput class = "addMoney" type = "number" min="0" step=".01" placeholder = "Add Money"></input>
+				</form>
+			</div>
     </div>
-	  
-    <div id = "p2">
-        <button id ="select_files"   type = "button" onclick = "addFiles()">Select Files</button>
-        <div id = "drop_zone" ondrop = "dropHandler(event);" ondragover="dragOverHandler(event);">
-          <p>Drag one or more files to this <i>drop zone</i>.</p>
+
+    <div class = "selects">
+			<input id="fileInput" type="file" style="display: none;">
+        <button id = "inputButton" class ="selectfiles" type = "button" onclick = "addFiles()">Select Files</button>
+			</input>
+        <div id = "drop_zone" class = "dropsquare" ondrop = "dropHandler(event);" ondragover="dragOverHandler(event);">
+					<div id = "filetext" class="filesAdded">
+  					<div class="fileInfoGroup">
+    					<div class="fileName">File Name</div>
+    					<div class="fileCost">Cost</div>
+							<div class="deleteText">Delete</div>
+  				</div>
+  					<div class="fileInfoGroup">
+    					<p>File_1.pdf</p>
+    					<p class = "number">$1.50</p>
+							<span class="delete" onclick = "deleteFile()">&#10060;</span>
+  					</div>
+
+					</div>
+					<div id = "guideText" class = "guideText">
+						<h2 class = "dragtitle">Drag and Drop Files to Upload</h2>
+						<div class = "bottomcontainer">
+							<h2 class = "ortext">or</h2><h2 class = "browseText" onclick = "addFiles()">Browse Files</h2>
+				</div>
+				</div>
         </div>
     </div>
 
-    <div id = "p3">
-      <button id = "log_out" type = "button" onclick = "logOut()">Log Out</button>  <button id ="submit" type = "button" onclick = "goToPrintSettings()">Submit Files</button   
-    </div>
-    
+		<div class="submits">
+		  <button id="log_out" type="button" onclick="logOut()">Log Out</button>
+		  <div id = "totalcost" class="total-cost">Total Cost: $0.00</div>
+		  <button id="submit" type="button" onclick="goToPrintSettings()">Submit Files</button>
+	</div>
+
   </div>
+	<script src="addfiless.js"></script>
+
 </body>
 </html>
